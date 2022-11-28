@@ -187,8 +187,8 @@ std::vector<patch> ibootpatchfinder64_iOS14::local_boot_patch(){
     loc_t localbootfunction = iter().imm();
     debug("localbootfunction=%p",localbootfunction);
     
-    patches.push_back({localbootfunction,"\x52\x80\x00\x00" /*mov w0, #0*/,4});
-    patches.push_back({localbootfunction+4,"\xD6\x5F\x03\x0C" /*ret*/,4});
+    patches.push_back({localbootfunction,"\x00\x00\x25\x08" /*mov w0, #0*/,4});
+    patches.push_back({localbootfunction+4,"\xC0\x30\xF5\x6D" /*ret*/,4});
     
     return patches;
 }
