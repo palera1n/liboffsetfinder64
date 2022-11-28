@@ -168,6 +168,7 @@ std::vector<patch> ibootpatchfinder64_iOS14::get_change_reboot_to_fsboot_patch()
 
 std::vector<patch> ibootpatchfinder64_iOS14::local_boot_patch(){
     std::vector<patch> patches;
+    vmem iter(*_vmem);
 
     loc_t debug_uartsstr = findstr("debug-uarts", true);
     debug("debug-uartsstr=%p", debug_uartsstr);
@@ -175,8 +176,8 @@ std::vector<patch> ibootpatchfinder64_iOS14::local_boot_patch(){
     loc_t debug_uartsrefstr = find_literal_ref(debug_uartsstr);
     debug("debug-uartsrefstr=%p",debug_uartsrefstr);
     
-    /*loc_t funccallrefstr = _vmem->memmem(&fr,sizeof(loc_t))+8;
-    debug("funccallrefstr=%p",funccallrefstr);*/
+    loc_t funccallrefstr = _vmem->memmem(&fr,sizeof(loc_t))+8;
+    debug("funccallrefstr=%p",funccallrefstr);
     
     loc_t test = find_call_ref(debug_uartsrefstr, 2);
     debug("test=%p",test);
