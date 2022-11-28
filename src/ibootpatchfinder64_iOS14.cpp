@@ -178,7 +178,7 @@ std::vector<patch> ibootpatchfinder64_iOS14::local_boot_patch(){
     vmem iter(*_vmem, debug_uartsrefstr);
     
     while (++iter != insn::bl);
-    iter++
+    ++iter;
     while (++iter != insn::bl);
     
     loc_t a = iter;
