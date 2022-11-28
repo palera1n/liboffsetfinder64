@@ -175,8 +175,11 @@ std::vector<patch> ibootpatchfinder64_iOS14::local_boot_patch(){
     loc_t debug_uartsrefstr = find_literal_ref(debug_uartsstr);
     debug("debug-uartsrefstr=%p",debug_uartsrefstr);
     
-    loc_t debug_uartsrefptr = debug_uartsrefstr+8;
-    debug("debug-uartsrefptr=%p",debug_uartsrefptr);
+    loc_t funccallrefstr = debug_uartsrefstr+20;
+    debug("funccallrefstr=%p",funccallrefstr);
+    
+    loc_t test = find_call_ref(funccallrefstr);
+    debug("test=%p",test);
     
     return patches;
 }
