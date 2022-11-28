@@ -183,7 +183,7 @@ std::vector<patch> ibootpatchfinder64_iOS14::local_boot_patch(){
     
     loc_t a = iter;
     debug("a=%p",a);
-    debug("imm=%p",iter.imm());
+    debug("imm=%p",iter().imm());
     return patches;
 }
 
