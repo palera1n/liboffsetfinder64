@@ -7,6 +7,7 @@
 //
 
 #include <libgeneral/macros.h>
+#include <stdio.h>
 #include "ibootpatchfinder64_iOS14.hpp"
 
 using namespace std;
@@ -168,14 +169,18 @@ std::vector<patch> ibootpatchfinder64_iOS14::get_change_reboot_to_fsboot_patch()
 std::vector<patch> ibootpatchfinder64_iOS14::local_boot_patch(){
     std::vector<patch> patches;
 
+    printf("a");
     loc_t debug_uartsstr = findstr("debug-uarts", true);
     debug("debug-uartsstr=%p", debug_uartsstr);
+    printf("b");
 
     loc_t debug_uartsrefstr = _vmem->memmem(&debug_uartsstr,sizeof(loc_t));
     debug("debug-uartsrefstr=%p",debug_uartsrefstr);
+    printf("c");
     
     loc_t debug_uartsrefptr = debug_uartsrefstr+8;
     debug("debug-uartsrefptr=%p",debug_uartsrefptr);
+    printf("d");
     
     return patches;
 }
