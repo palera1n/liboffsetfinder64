@@ -213,7 +213,7 @@ std::vector<patch> ibootpatchfinder64_iOS14::rename_kcache_to_kcachd_patch(){
     debug("kcachestr=%p",kcachestr);
     
 
-    patches.push_back({kcachestr,"/System/Library/Caches/com.apple.kernelcaches/kernelcachd" /*doubt_work*/,4}); //rewrite pointer to point to fsboot
+    patches.push_back({kcachestr,"/System/Library/Caches/com.apple.kernelcaches/kernelcachd" /*doubt_work*/,57}); //rewrite pointer to point to fsboot
 
     return patches;
 }
