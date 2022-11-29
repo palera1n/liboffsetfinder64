@@ -26,6 +26,8 @@ namespace tihmstar {
             virtual std::vector<patch> get_change_reboot_to_fsboot_patch() override;
             
             virtual std::vector<patch> local_boot_patch() override;
+            
+            virtual std::vector<patch> renamed_snapshot_patch() override;
 
             virtual loc_t find_iBoot_logstr(uint64_t loghex, int skip = 0, uint64_t shortdec = 0) override;
 
