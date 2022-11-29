@@ -116,7 +116,7 @@ namespace tihmstar {
             /*
                 kernelcache -> kernelcachd
             */
-            virtual std::vector<patch> change_kcache_to_kcachd_patch();
+            virtual std::vector<patch> rename_kcache_to_kcachd_patch();
 
 
             virtual loc_t find_iBoot_logstr(uint64_t loghex, int skip = 0, uint64_t shortdec = 0);
