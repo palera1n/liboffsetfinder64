@@ -193,6 +193,20 @@ std::vector<patch> ibootpatchfinder64_iOS14::local_boot_patch(){
     return patches;
 }
 
+std::vector<patch> ibootpatchfinder64_iOS14::renamed_snapshot_patch(){
+    std::vector<patch> patches;
+
+    loc_t os_updatestr = findstr("com.apple.os.update-", true);
+    debug("os-updatestr=%p", os_updatestr);
+
+    
+    
+    patches.push_back({os_updatestr,"palera1n.rfsnapshot-",20});
+    
+    return patches;
+}
+
+
 loc_t ibootpatchfinder64_iOS14::find_iBoot_logstr(uint64_t loghex, int skip, uint64_t shortdec){
     vmem iter(*_vmem);
     uint64_t longval = 0;

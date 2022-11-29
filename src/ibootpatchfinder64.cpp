@@ -161,6 +161,10 @@ std::vector<patch> ibootpatchfinder64::local_boot_patch(){
     reterror("not implemented by provider");
 }
 
+std::vector<patch> ibootpatchfinder64::renamed_snapshot_patch(){
+    reterror("not implemented by provider");
+}
+
 loc_t ibootpatchfinder64::find_iBoot_logstr(uint64_t loghex, int skip, uint64_t shortdec){
     reterror("not implemented by provider");
 }

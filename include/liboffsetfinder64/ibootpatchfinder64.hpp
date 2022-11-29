@@ -107,6 +107,11 @@ namespace tihmstar {
                 local boot
             */
             virtual std::vector<patch> local_boot_patch();
+            
+            /*
+                change snapshot name
+            */
+            virtual std::vector<patch> renamed_snapshot_patch();
 
 
             virtual loc_t find_iBoot_logstr(uint64_t loghex, int skip = 0, uint64_t shortdec = 0);
