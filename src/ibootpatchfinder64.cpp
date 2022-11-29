@@ -161,7 +161,7 @@ std::vector<patch> ibootpatchfinder64::local_boot_patch(){
     reterror("not implemented by provider");
 }
 
-std::vector<patch> ibootpatchfinder64_iOS14::renamed_snapshot_patch(){
+std::vector<patch> ibootpatchfinder64::renamed_snapshot_patch(){
     reterror("not implemented by provider");
 }
 
