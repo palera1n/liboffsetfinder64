@@ -88,7 +88,7 @@ std::vector<patch> ibootpatchfinder64_iOS14::get_sigcheck_patch(){
         patches.push_back({img4interposercallbackret - 4, "\x00\x00\x80\xD2" /*mov x0, 0*/, 4});
         while(--iter3 != insn::b) continue;
         if(--iter3 != insn::ldp) {
-            while(--iter3 != insn::b) continue;
+            while(--iter3 != insn::ldp) continue;
             if(--iter3 != insn::ldp) {
                 reterror("img4interposercallback couldn't find branch for ret2!");
             } else {
